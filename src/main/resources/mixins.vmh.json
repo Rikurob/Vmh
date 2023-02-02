@@ -1,0 +1,17 @@
+{
+  "compatibilityLevel": "JAVA_17",
+  "package": "com.rikurob.vmh.mixin",
+  "refmap": "mixins.vmh.refmap.json",
+  "minVersion": "0.8",
+  "required": true,
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "mixins": [
+    "ScaleNoiseMixin"
+  ],
+  "client": [
+  ],
+  "server": [
+  ]
+}
