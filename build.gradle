@@ -12,7 +12,6 @@ plugins {
     id 'net.minecraftforge.gradle' version '5.1.+'
 }
 apply plugin: 'org.spongepowered.mixin'
-
 version = '1.1.6-1.19.3'
 group = 'com.rikurob.vmh'
 archivesBaseName = 'vmh'
@@ -87,9 +86,17 @@ repositories {
     maven {
         url = "https://jitpack.io"
     }
+    maven {
+        name = "JitPack"
+        url = "https://jitpack.io"
+        content {
+            includeGroup "com.github.Rikurob"
+        }
+    }
 }
 
 dependencies {
+
     minecraft 'net.minecraftforge:forge:1.19.3-44.0.48'
     annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
     implementation fg.deobf("com.github.Virtuoel:Pehkui:${pehkui_version}")
@@ -98,13 +105,13 @@ dependencies {
 jar {
     manifest {
         attributes([
-                "Specification-Title"     : "vmh",
+                "Specification-Title"     : project.archivesBaseName,
                 "Specification-Vendor"    : "Rikurob",
-                "Specification-Version"   : "1.1.6",
+                "Specification-Version"   : project.version,
                 "Implementation-Title"    : project.name,
-                "Implementation-Version"  : project.jar.archiveVersion,
+                "Maven-Artifact": "${project.group}:${project.archivesBaseName}:${project.version}",
                 "Implementation-Vendor"   : "Rikurob",
-                "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ")
+                "Implementation-Version"  : project.jar.archiveVersion,
         ])
     }
 }
