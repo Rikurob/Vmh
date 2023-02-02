@@ -1,0 +1,36 @@
+
+modLoader="javafml"
+loaderVersion="[43,)"
+license="All rights reserved"
+
+[[mods]]
+modId="vmh"
+version="1.1.6-1.19.3"
+displayName="VMH - Variable Mob Height"
+
+logoFile="vmh.png"
+authors="Rikurob"
+
+description='''
+Adds configurable variety to mob sizes, and other attributes!
+'''
+[[dependencies.vmh]]
+    modId="forge"
+    mandatory=true
+    versionRange="[44,)"
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.vmh]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="[1.19.3,1.20)"
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.vmh]]
+    modId="pehkui"
+    mandatory=true
+    versionRange="[3.6.2,)"
+    ordering="NONE"
+    side="BOTH"
