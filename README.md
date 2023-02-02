@@ -15,3 +15,7 @@ Step 2. Add the dependency
 	dependencies {
 	        implementation 'com.github.Rikurob:Vmh:${vmh_version}'
 	}
+	
+	
+Step 3. In your root gradle.properties add vmh=version.
+A list of versions can be found here: https://github.com/Rikurob/Vmh/releases.
