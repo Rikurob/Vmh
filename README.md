@@ -1,6 +1,7 @@
 # Vmh
 Vmh - Variable Mob Hieght
 
+Note:The released versions on CurseForge are currently not the same here as I have been having trouble setting up the repositories but I am working on it.
 
 Step 1. Add it in your root build.gradle at the end of repositories:
 
