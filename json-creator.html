@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON Creator</title>
+    <style>
+        #jsonCreatorForm {
+            margin: 20px;
+            padding: 20px;
+            border: 1px solid #ccc;
+        }
+        label,
+        input {
+            margin-bottom: 10px;
+            display: block;
+        }
+        #jsonOutput {
+            margin: 20px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            background-color: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+    <form id="jsonCreatorForm">
+        <label for="entityType">Entity Type:</label>
+        <input type="text" id="entityType" name="entityType" required>
+        <label for="min">Min:</label>
+        <input type="number" id="min" name="min" required>
+        <label for="max">Max:</label>
+        <input type="number" id="max" name="max" required>
+        <!-- Add other fields as necessary -->
+        <input type="submit" value="Create JSON">
+    </form>
+
+    <pre id="jsonOutput"></pre>
+
+    <script>
+        document.getElementById('jsonCreatorForm').addEventListener('submit', function(e) {
+            e.preventDefault(); // Prevent the default form submission
+
+            // Get the values from the form
+            var entityType = document.getElementById('entityType').value;
+            var min = document.getElementById('min').value;
+            var max = document.getElementById('max').value;
+
+            // Create the JSON object
+            var json = {
+                "entity_type": entityType,
+                "min": parseFloat(min),
+                "max": parseFloat(max),
+                // Add other fields as necessary
+            };
+
+            // Convert the JSON object to a string
+            var jsonString = JSON.stringify(json, null, 2);
+
+            // Display the JSON string in the <pre> element
+            document.getElementById('jsonOutput').textContent = jsonString;
+        });
+    </script>
+</body>
+</html>
